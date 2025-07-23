@@ -1,0 +1,72 @@
+﻿@model LibraryManagement.Models.Book
+@{
+    ViewData["Title"] = "Kitap sil";
+}
+
+<div class="container mt-5">
+    <!-- Delete Confirmation Card -->
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card border-danger">
+                <!-- Card Header -->
+                <div class="card-header bg-danger text-white">
+                    <h4 class="mb-0">
+                        <i class="bi bi-exclamation-triangle-fill"></i> Silme işlemini onayla
+                    </h4>
+                </div>
+
+                <!-- Card Body -->
+                <div class="card-body">
+                    <!-- Alert Message -->
+                    <div class="alert alert-danger" role="alert">
+                        <h4 class="alert-heading">Bu kitabı silmek istediğinizden emin misiniz?</h4>
+                        <p>Silindikten sonra bu işlem geri alınamaz.</p>
+                    </div>
+
+                    <!-- Book Details -->
+                    <dl class="row">
+                        <dt class="col-sm-4">Başlık:</dt>
+                        <dd class="col-sm-8">@Model.Title</dd>
+
+                        <dt class="col-sm-4">Yazar:</dt>
+                        <dd class="col-sm-8">@Model.Author</dd>
+
+                        <dt class="col-sm-4">ISBN:</dt>
+                        <dd class="col-sm-8">@Model.ISBN</dd>
+
+                        <dt class="col-sm-4">Yayınlanma tarihi:</dt>
+                        <dd class="col-sm-8">@Model.PublishedDate.ToString("yyyy-MM-dd")</dd>
+
+                        <dt class="col-sm-4">Kullanılabilirlik:</dt>
+                        <dd class="col-sm-8">
+                            @if (Model.IsAvailable)
+                            {
+                                <span class="badge bg-success">Mevcut</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-danger">Çıkış yapıldı</span>
+                            }
+                        </dd>
+                    </dl>
+                </div>
+
+                <!-- Card Footer with Actions -->
+                <div class="card-footer d-flex justify-content-end">
+                    <form asp-action="Delete" asp-controller="Books" method="post" class="me-2">
+                        <input type="hidden" asp-for="BookId" />
+                        <button type="submit" class="btn btn-danger">
+                            <i class="bi bi-trash-fill"></i> Sil
+                        </button>
+                    </form>
+                    <a asp-action="Index" asp-controller="Books" class="btn btn-secondary">
+                        <i class="bi bi-x-circle-fill"></i> İptal
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Include Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">

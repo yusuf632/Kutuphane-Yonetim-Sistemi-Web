@@ -1,0 +1,23 @@
+﻿@model LibraryManagement.ViewModels.ReturnViewModel
+@{
+    ViewData["Title"] = "İade kitabı";
+}
+
+<div class="container mt-5">
+    <h2>İade kitabı</h2>
+    <div class="card">
+        <div class="card-header">
+            <strong>@Model.BookTitle</strong>
+        </div>
+        <div class="card-body">
+            <p><strong>Borçlunun Adı:</strong> @Model.BorrowerName</p>
+            <p><strong>Borçlanma Tarihi:</strong> @Model.BorrowDate?.ToString("yyyy-MM-dd HH:mm:ss")</p>
+
+            <form asp-action="Return" method="post">
+                <input type="hidden" asp-for="BorrowRecordId" />
+                <button type="submit" class="btn btn-success">İadeyi Onayla</button>
+                <a asp-action="Index" asp-controller="Books" class="btn btn-secondary">İptal</a>
+            </form>
+        </div>
+    </div>
+</div>

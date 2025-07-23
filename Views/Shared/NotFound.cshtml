@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Sayfa bulunamadı";
+    var errorMessage = ViewBag.ErrorMessage as string;
+}
+
+<div class="container text-center mt-5">
+    <h1 class="display-4 text-danger">Kaynak bulunamadı</h1>
+    <p class="lead">
+        @if (!string.IsNullOrEmpty(errorMessage))
+        {
+            @errorMessage
+        }
+        else
+        {
+            <text>Aradığınız sayfa mevcut değil.</text>
+        }
+    </p>
+    <a asp-action="Index" asp-controller="Books" class="btn btn-primary">Kitap listesine geri dön</a>
+</div>
