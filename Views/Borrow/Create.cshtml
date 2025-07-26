@@ -1,10 +1,10 @@
 ﻿@model LibraryManagement.ViewModels.BorrowViewModel
 @{
-    ViewData["Title"] = "Kitap ödünç al";
+    ViewData["Title"] = "Kitap ödünç ver";
 }
 
 <div class="container mt-5">
-    <h2>Kitap ödünç al</h2>
+    <h2>Kitap ödünç ver</h2>
     <div class="card">
         <div class="card-header">
             <strong>@Model.BookTitle</strong>
@@ -32,7 +32,7 @@
                     <span asp-validation-for="Phone" class="text-danger"></span>
                 </div>
 
-                <button type="submit" class="btn btn-primary">Ödünç almayı onayla</button>
+                <button type="submit" class="btn btn-primary">Ödünç vermeyi onayla</button>
                 <a asp-action="Index" asp-controller="Books" class="btn btn-secondary">İptal</a>
             </form>
         </div>
