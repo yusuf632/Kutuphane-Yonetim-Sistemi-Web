@@ -206,7 +206,7 @@ namespace LibraryManagement.Controllers
         }
 
         // POST: Books/Delete/5
-        [HttpPost, ActionName("Sil")]
+        [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
