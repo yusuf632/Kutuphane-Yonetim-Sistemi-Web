@@ -13,11 +13,13 @@ Kitap ödünç alma ve iade işlemlerini takip edebilir,
 🛠 Kullanılan Teknolojiler
 Platform: ASP.NET Core MVC
 
-Programlama Dili: C#
+Backend: ASP.NET Core MVC
 
-Veritabanı: SQL Server 
+Frontend: Razor Pages, HTML5, CSS3, Bootstrap
 
-Diğer Araçlar: Entity Framework
+Veritabanı: SQL Server
+
+Diğer Araçlar: Entity Framework Core
 
 🖥 Temel Özellikler
 
